@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>こころの森</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <span class="eyebrow">MY LITTLE EMOTION FOREST</span>
+      <h1>🌳 こころの森</h1>
+      <p>今日の表情が、明日の風景になる。</p>
+      <nav>
+        <a href="#camera-section">今日の記録</a>
+        <a href="#forest-section">わたしの森</a>
+        <a href="#calendar-section">カレンダー</a>
+      </nav>
+    </header>
+
+    <section class="panel" id="camera-section">
+      <h2>📷 今日の表情を記録</h2>
+      <p id="status">AIモデルを読み込み中...</p>
+
+      <video id="video" autoplay muted playsinline></video>
+
+      <div class="buttons">
+        <button id="capture" disabled>表情を判定する</button>
+      </div>
+
+      <div id="result" class="result">
+        カメラに顔を映して、撮影してみよう。
+      </div>
+
+      <div id="confirmation" hidden>
+        <p>推定結果を確認・変更できます。</p>
+        <select id="emotionSelect"></select>
+        <button id="save">🌱 植物を育てる</button>
+      </div>
+    </section>
+
+    
+    <section class="panel" id="forest-section">
+      <div class="section-heading">
+        <div>
+          <h2>🌳 わたしの森</h2>
+          <p id="count">記録：0日</p>
+        </div>
+        <div class="forest-controls">
+          <button id="prevForestMonth" class="secondary">‹</button>
+          <span id="forestMonthTitle"></span>
+          <button id="nextForestMonth" class="secondary">›</button>
+        </div>
+      </div>
+
+      <div class="mode-switch">
+        <button id="monthlyMode">月間の森</button>
+        <button id="yearlyMode" class="secondary">年間の森</button>
+      </div>
+
+      <div id="monthlyView">
+        <div id="forest" class="forest spring">
+          <div class="sun"></div>
+          <div class="cloud cloud-one"></div>
+          <div class="cloud cloud-two"></div>
+          <div class="hill hill-back"></div>
+          <div class="hill hill-front"></div>
+          <div id="plantsLayer"></div>
+        </div>
+        <p id="seasonLabel" class="season-label"></p>
+      </div>
+
+      <div id="yearlyView" hidden>
+        <div class="yearly-heading">
+          <button id="prevYear" class="secondary">‹</button>
+          <h3 id="yearTitle"></h3>
+          <button id="nextYear" class="secondary">›</button>
+        </div>
+        <div id="yearMap"></div>
+        <p class="season-label">
+          円の各区画を選ぶと、その月の森を表示します。
+        </p>
+      </div>
+
+      <div class="buttons">
+        <button id="demo" class="secondary">
+          30日分のデモを生成
+        </button>
+        <button id="clear" class="danger">
+          記録を削除
+        </button>
+      </div>
+    </section>
+
+
+    <section class="panel" id="calendar-section">
+      <h2>📅 こころのカレンダー</h2>
+
+      <div class="calendar-controls">
+        <button id="prevMonth" class="secondary">‹</button>
+        <h3 id="calendarTitle"></h3>
+        <button id="nextMonth" class="secondary">›</button>
+      </div>
+
+      <div class="calendar-grid" id="calendarGrid"></div>
+
+      <div id="dayDetail" class="day-detail">
+        日付を選ぶと記録が表示されます。
+      </div>
+    </section>
+
+    <footer>
+      表情の推定結果は実際の感情を保証するものではありません。
+      顔写真は保存せず、記録データのみブラウザ内に保存します。
+    </footer>
+  </main>
+</body>
+</html>
