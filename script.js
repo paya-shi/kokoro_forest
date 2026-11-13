@@ -1179,7 +1179,7 @@ function renderYearMap() {
 
       const type = getTreeType(record.emotion, season);
 
-      let scale = 0.30 + depth * 0.12;
+      let scale = 0.48 + depth * 0.18;
 
       if (type === "hydrangea" ||
           type === "thorny" ||

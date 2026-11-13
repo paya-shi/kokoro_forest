@@ -599,7 +599,7 @@ footer {
 
 /* 奥の木は小さく、手前は大きく */
 .plant.back-row {
-  scale: 0.7;
+  scale: 0.85;
 }
 
 .plant.front-row {
@@ -689,5 +689,57 @@ footer {
   #yearMap {
     padding: 4px;
     border-radius: 14px;
+  }
+}
+
+/* 月間モード：木を大きくする */
+.forest {
+  height: 520px;
+}
+
+.plant {
+  width: 105px;
+  height: 150px;
+}
+
+.plant.tall {
+  width: 135px;
+  height: 190px;
+}
+
+.plant.small {
+  width: 85px;
+  height: 120px;
+}
+
+.plant.shrub {
+  width: 95px;
+  height: 100px;
+}
+
+/* スマホ用 */
+@media (max-width: 600px) {
+  .forest {
+    height: 400px;
+  }
+
+  .plant {
+    width: 70px;
+    height: 100px;
+  }
+
+  .plant.tall {
+    width: 90px;
+    height: 130px;
+  }
+
+  .plant.small {
+    width: 60px;
+    height: 85px;
+  }
+
+  .plant.shrub {
+    width: 65px;
+    height: 70px;
   }
 }
